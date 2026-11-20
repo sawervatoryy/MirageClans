@@ -3,6 +3,11 @@
 Современная клановая система для **Paper 1.21.4** (Java 21) по аналогии с pnClans: всё управление строится вокруг
 анимированных GUI, гибкой системы ролей и интеграций с Vault, PlayerPoints и PlaceholderAPI.
 
+![Paper](https://img.shields.io/badge/Paper-1.21.4-00ACFF?style=for-the-badge)
+![Java](https://img.shields.io/badge/Java-21-FF7B00?style=for-the-badge)
+![Version](https://img.shields.io/badge/version-1.0.0-00B0F2?style=for-the-badge)
+![Studio](https://img.shields.io/badge/MirageStudio-sawervatoryy-8A2BE2?style=for-the-badge)
+
 **Автор:** sawervatoryy · **MirageStudio**
 
 ---
