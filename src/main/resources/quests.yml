@@ -1,0 +1,102 @@
+# ═══════════════════════════════════════════════════════════════
+#  MirageClans — quests.yml (клановые квесты)
+#  Прогресс общий для всего клана. Награда: клановый опыт + средства в казну.
+#
+#  type:   KILL_MOB | KILL_PLAYER | BREAK_BLOCK | TREASURY_DEPOSIT | PLAYTIME
+#  period: DAILY | WEEKLY
+#  target / targets: тип моба (ZOMBIE) или материал (DIAMOND_ORE); ANY — любой.
+#          KILL_PLAYER/TREASURY_DEPOSIT/PLAYTIME — цели не нужны.
+#  amount: сколько нужно (PLAYTIME — минуты, TREASURY_DEPOSIT — деньги)
+#  min-level: с какого уровня клана квест доступен
+# ═══════════════════════════════════════════════════════════════
+
+reset:
+  timezone: "Europe/Moscow"
+  hour: 0                 # во сколько обновляются квесты
+  weekly-day: MONDAY
+
+settings:
+  # Один и тот же убийца/жертва засчитывается не чаще раза в N секунд (анти-фарм)
+  kill-player-same-victim-cooldown-seconds: 600
+
+quests:
+  daily_zombies:
+    period: DAILY
+    type: KILL_MOB
+    target: ZOMBIE
+    amount: 100
+    min-level: 1
+    name: "&fОхота на зомби"
+    description:
+      - "&7Клан вместе убивает зомби."
+    icon: ZOMBIE_HEAD
+    rewards: { xp: 50, money: 500, points: 0 }
+
+  daily_mobs:
+    period: DAILY
+    type: KILL_MOB
+    target: ANY
+    amount: 250
+    min-level: 2
+    name: "&fЗачистка территории"
+    description:
+      - "&7Убейте любых мобов."
+    icon: IRON_SWORD
+    rewards: { xp: 120, money: 1500, points: 0 }
+
+  daily_playtime:
+    period: DAILY
+    type: PLAYTIME
+    amount: 180
+    min-level: 1
+    name: "&fВместе веселее"
+    description:
+      - "&7Суммарное время клана онлайн (минуты)."
+    icon: CLOCK
+    rewards: { xp: 60, money: 300, points: 0 }
+
+  daily_ores:
+    period: DAILY
+    type: BREAK_BLOCK
+    targets: [DIAMOND_ORE, DEEPSLATE_DIAMOND_ORE]
+    amount: 30
+    min-level: 3
+    name: "&fАлмазная лихорадка"
+    description:
+      - "&7Добудьте алмазную руду."
+    icon: DIAMOND
+    rewards: { xp: 150, money: 3000, points: 0 }
+
+  weekly_players:
+    period: WEEKLY
+    type: KILL_PLAYER
+    amount: 30
+    min-level: 2
+    name: "&#00ACFFВойна кланов"
+    description:
+      - "&7Победите игроков чужих кланов."
+    icon: NETHERITE_SWORD
+    rewards: { xp: 500, money: 5000, points: 5 }
+
+  weekly_treasury:
+    period: WEEKLY
+    type: TREASURY_DEPOSIT
+    amount: 50000
+    min-level: 1
+    name: "&#00ACFFПолная казна"
+    description:
+      - "&7Пополните казну клана деньгами."
+    icon: GOLD_INGOT
+    rewards: { xp: 400, money: 2500, points: 0 }
+
+  weekly_blocks:
+    period: WEEKLY
+    type: BREAK_BLOCK
+    target: ANY
+    amount: 20000
+    min-level: 4
+    name: "&#00ACFFСтроительная бригада"
+    description:
+      - "&7Сломайте любые блоки."
+    icon: IRON_PICKAXE
+    rewards: { xp: 800, money: 8000, points: 10 }

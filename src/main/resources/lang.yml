@@ -1,0 +1,275 @@
+# ═══════════════════════════════════════════════════════════════
+#  MirageClans — lang.yml (все сообщения)
+#  Основной цвет &f, выделительный &#00ACFF. Скобки: « » ‹ › ⌈ ⌋
+# ═══════════════════════════════════════════════════════════════
+
+prefix: "&#00ACFF«&fКланы&#00ACFF» &f"
+
+general:
+  loading: "Данные кланов ещё загружаются, подождите немного."
+  no-clan: "Вы не состоите в клане."
+  no-clan-label: "Нет клана"
+  no-permission: "&cУ вас нет прав для этого действия."
+  not-member: "&cТакого участника нет в вашем клане."
+  player-offline: "&cИгрок &f{player} &cне в сети."
+  players-only: "&cЭту команду можно использовать только в игре."
+  reloaded: "Конфигурация &#00ACFFперезагружена&f."
+  clan-not-found: "&cКлан не найден."
+  hierarchy: "&cВаша роль недостаточно высока для этого действия."
+  leader-only: "&cЭто может сделать только лидер клана."
+
+create:
+  already-in-clan: "&cВы уже состоите в клане."
+  name-length: "&cНазвание должно быть от &f{min} &cдо &f{max} &cсимволов."
+  tag-length: "&cТег должен быть от &f{min} &cдо &f{max} &cсимволов."
+  name-invalid: "&cНазвание содержит недопустимые символы."
+  tag-invalid: "&cТег содержит недопустимые символы."
+  name-taken: "&cКлан с таким названием уже существует."
+  tag-taken: "&cКлан с таким тегом уже существует."
+  not-enough-money: "&cНе хватает денег для создания клана: нужно &f{amount}&c."
+  not-enough-points: "&cНе хватает очков для создания клана: нужно &f{amount}&c."
+  success: "Клан &#00ACFF«&f{clan}&#00ACFF» &7[{tag}] &fсоздан! Откройте меню: &#00ACFF/clan"
+
+disband:
+  confirm: "Для роспуска клана введите &#00ACFF/clan disband confirm&f."
+  success: "Клан &#00ACFF«&f{clan}&#00ACFF» &fраспущен."
+
+invite:
+  clan-full: "&cВ клане нет свободных мест для участников."
+  target-in-clan: "&cИгрок &f{player} &cуже состоит в клане."
+  received: "Игрок &#00ACFF{player} &fприглашает вас в клан &#00ACFF«&f{clan}&#00ACFF»&f. Принять: &#00ACFF/clan accept {clan} &f(действует {seconds} сек.)"
+  sent: "Приглашение отправлено игроку &#00ACFF{player}&f."
+  not-found: "&cПриглашение не найдено или истекло."
+  accepted: "Вы вступили в клан &#00ACFF«&f{clan}&#00ACFF»&f!"
+  denied: "Вы отклонили приглашение клана &#00ACFF«&f{clan}&#00ACFF»&f."
+  joined: "Игрок &#00ACFF{player} &fвступил в клан."
+  pending: "У вас приглашений в кланы: &#00ACFF{count}&f. Откройте &#00ACFF/clan&f."
+
+leave:
+  leader: "&cЛидер не может покинуть клан: передайте лидерство или распустите клан."
+  left: "Игрок &#00ACFF{player} &fпокинул клан."
+  success: "Вы покинули клан &#00ACFF«&f{clan}&#00ACFF»&f."
+
+kick:
+  self: "&cНельзя исключить самого себя."
+  you-kicked: "Вас исключил из клана &#00ACFF«&f{clan}&#00ACFF» &fигрок &#00ACFF{player}&f."
+  broadcast: "Игрок &#00ACFF{player} &fисключён из клана (&#00ACFF{actor}&f)."
+
+transfer:
+  self: "&cВы уже лидер."
+  broadcast: "Новый лидер клана — &#00ACFF{player}&f."
+
+role:
+  leader-fixed: "&cРоль лидера изменить нельзя."
+  already-top: "&cУ участника уже максимальная доступная роль."
+  already-bottom: "&cУ участника уже минимальная роль."
+  changed: "Игрок &#00ACFF{player} &fтеперь: {role}&f."
+  not-found: "&cРоль &f{role} &cне найдена."
+  bad-name: "&cНедопустимое название роли."
+  exists: "&cРоль &f{role} &cуже существует."
+  limit: "&cДостигнут лимит собственных ролей."
+  created: "Роль {role} &fсоздана. Настройте права в меню ролей."
+  deleted: "Роль {role} &fудалена."
+  renamed: "Роль переименована: {role}&f."
+  default-protected: "&cРоль по умолчанию удалить нельзя."
+  line: "&#00ACFF{id} &7- {role} &7(приоритет &f{weight}&7) &f{perms}"
+
+roles:
+  leader: "&#00ACFFЛидер"
+  all-perms: "все"
+
+settings:
+  ff-on: "Урон по соклановцам &aвключён&f."
+  ff-off: "Урон по соклановцам &cвыключен&f."
+  glow-mode: "Подсветка соклановцев: {mode}&f."
+  glow-color: "Цвет подсветки: {color}&f."
+  bad-color: "&cДоступные цвета: &f{colors}"
+
+glow-modes:
+  OFF: "&7выключена"
+  GLOW: "&#00ACFFконтурное свечение"
+  NAME_COLOR: "&#00ACFFцветные ники"
+
+friendly-fire:
+  blocked: "&cВ вашем клане урон по своим отключён."
+
+treasury:
+  currency-money: "монет"
+  currency-points: "очков"
+  disabled: "&cЭта валюта отключена."
+  bad-amount: "&cНеверная сумма."
+  no-economy: "&cЭкономика недоступна (нужен Vault / PlayerPoints)."
+  not-enough-player: "&cУ вас недостаточно: {currency}."
+  not-enough-clan: "&cВ казне клана недостаточно: {currency}."
+  economy-error: "&cОшибка экономики, операция отменена."
+  deposited: "Вы внесли в казну &#00ACFF{amount} &f{currency}."
+  withdrawn: "Вы сняли из казны &#00ACFF{amount} &f{currency}."
+  balance: "Казна: &#00ACFF{money} &fмонет, &#00ACFF{points} &fочков."
+
+history:
+  empty: "История операций пуста."
+  header: "&#00ACFF⌈&f История казны &#00ACFF⌋"
+  line: "&7{time} &#00ACFF{player} &f{action}: &#00ACFF{amount} &f{currency}"
+  actions:
+    DEPOSIT: "внёс"
+    WITHDRAW: "снял"
+    QUEST: "награда за квест"
+
+homes:
+  bad-name: "&cНедопустимое название дома."
+  bad-world: "&cВ этом мире нельзя ставить дом клана."
+  limit: "&cЛимит домов вашего уровня: &f{max}&c. Повышайте уровень клана!"
+  set: "Дом клана &#00ACFF{home} &fустановлен."
+  deleted: "Дом клана &#00ACFF{home} &fудалён."
+  not-found: "&cДом &f{home} &cне найден."
+  world-missing: "&cМир этого дома не загружен."
+  already-teleporting: "&cТелепортация уже идёт."
+  teleported: "Вы телепортированы на дом &#00ACFF{home}&f."
+  cancelled: "&cТелепортация отменена: вы сдвинулись."
+  teleporting: "Телепортация на &#00ACFF{home} &fчерез &#00ACFF{seconds} &fсек. Не двигайтесь!"
+  none: "У клана нет домов. Установите: &#00ACFF/clan sethome"
+  header: "&#00ACFF⌈&f Дома клана &7({count}/{max}) &#00ACFF⌋"
+  line: "&#00ACFF{home} &7- &f{world} {x} {y} {z}"
+
+levels:
+  auto-mode: "&cУровень повышается автоматически."
+  max: "&cКлан уже достиг максимального уровня."
+  not-enough: "&cНужно опыта: &f{xp}&c, в казне: &f{cost} &cмонет."
+  level-up: "&#00ACFF⌈&f Клан достиг уровня &#00ACFF{level}&f! &#00ACFF⌋"
+  max-label: "MAX"
+  bar-fill-color: "&#00ACFF"
+  bar-empty-color: "&8"
+  info:
+    - "&#00ACFF⌈&f Уровень клана &#00ACFF⌋"
+    - "&#00ACFF‹&f Уровень: &#00ACFF{level}"
+    - "&#00ACFF‹&f Опыт: &f{xp}&7/&f{xp_needed}"
+    - "&#00ACFF‹&f Участников: &f{max_members}"
+    - "&#00ACFF‹&f Слотов склада: &f{storage_slots}"
+    - "&#00ACFF‹&f Домов: &f{max_homes}"
+
+quests:
+  completed: "&#00ACFF⌈&f Квест выполнен: &f{quest} &#00ACFF⌋ &7(+{xp} опыта, +{money} монет, +{points} очков в казну)"
+  header: "&#00ACFF⌈&f {period} &7(обновление через {reset}) &#00ACFF⌋"
+  line: "&#00ACFF‹ &f{quest} &7- &f{progress}&7/&f{amount} {status}"
+  line-locked: "&#00ACFF‹ &7{quest} &7- &cс уровня клана {level}"
+  status-active: "&e[в процессе]"
+  status-done: "&a[выполнено]"
+  tab-active: "&a[выбрано]"
+  tab-inactive: "&7"
+  bar-fill: "&#00ACFF|"
+  bar-empty: "&8|"
+  periods:
+    DAILY: "Ежедневные квесты"
+    WEEKLY: "Еженедельные квесты"
+  item-lore:
+    - ""
+    - "{description}"
+    - ""
+    - "&f {bar}"
+    - "&#00ACFF‹&f Прогресс: &f{progress}&7/&f{amount} &7({percent}%)"
+    - "&#00ACFF‹&f Статус: {status}"
+    - ""
+    - "&f Награда:"
+    - "&#00ACFF ‹&f Опыт клана: &#00ACFF{xp}"
+    - "&#00ACFF ‹&f В казну: &#00ACFF{money} &fмонет, &#00ACFF{points} &fочков"
+    - ""
+    - "&7 Обновление через: {reset}"
+  locked-lore:
+    - ""
+    - "&c Доступно с уровня клана &f{level}"
+
+members:
+  header: "&#00ACFF⌈&f Участники клана &7({count}) &#00ACFF⌋"
+  line: "&#00ACFF‹ &f{player} &7- {role} &7- {status}"
+  online: "&aонлайн"
+  offline: "&7не в сети"
+
+top:
+  header: "&#00ACFF⌈&f Топ кланов: {type} &#00ACFF⌋"
+  line: "&#00ACFF#{rank} &f{clan} &7[{tag}] &7- &#00ACFF{value}"
+  types:
+    LEVEL: "по уровню"
+    POINTS: "по очкам"
+    BALANCE: "по балансу"
+
+info:
+  lines:
+    - "&#00ACFF⌈&f Клан {clan} &7[{tag}] &#00ACFF⌋"
+    - "&#00ACFF‹&f Лидер: &#00ACFF{leader}"
+    - "&#00ACFF‹&f Уровень: &#00ACFF{level} &7({xp}/{xp_needed})"
+    - "&#00ACFF‹&f Участники: &f{online} онлайн / {members}/{max_members}"
+    - "&#00ACFF‹&f Казна: &#00ACFF{balance} &fмонет, &#00ACFF{points} &fочков"
+    - "&#00ACFF‹&f Дома: &f{homes}/{max_homes}"
+    - "&#00ACFF‹&f Урон по своим: {ff}"
+
+prompt:
+  clan-name: "Введите &#00ACFFназвание клана &fв чат:"
+  clan-tag: "Введите &#00ACFFтег клана &fв чат:"
+  invite-name: "Введите &#00ACFFник игрока &fв чат:"
+  role-name: "Введите &#00ACFFназвание роли &f(можно с цветовыми &-кодами):"
+  role-rename: "Введите &#00ACFFновое название роли&f:"
+  home-name: "Введите &#00ACFFназвание дома &fв чат:"
+  amount-deposit: "Введите &#00ACFFсумму для внесения &fв чат:"
+  amount-withdraw: "Введите &#00ACFFсумму для снятия &fв чат:"
+  hint: "&7Напишите &fотмена&7, чтобы отменить."
+  cancelled: "Ввод отменён."
+
+confirm:
+  disband: "&c⌈ Распустить клан? ⌋"
+  leave: "&c⌈ Покинуть клан? ⌋"
+  kick: "&c⌈ Исключить {player}? ⌋"
+  transfer: "&c⌈ Передать лидерство {player}? ⌋"
+  delete-role: "&c⌈ Удалить роль {role}&c? ⌋"
+
+chat:
+  enabled: "Режим кланового чата &aвключён&f: все сообщения идут клану. Отключить: &#00ACFF/cc"
+  disabled: "Режим кланового чата &cвыключен&f."
+
+placeholders:
+  "on": "&aвкл"
+  "off": "&cвыкл"
+
+role-editor:
+  perm-lore-on:
+    - ""
+    - "&f Состояние: &aразрешено"
+    - ""
+    - "&#00ACFF› &fНажмите, чтобы запретить"
+  perm-lore-off:
+    - ""
+    - "&f Состояние: &cзапрещено"
+    - ""
+    - "&#00ACFF› &fНажмите, чтобы разрешить"
+
+time:
+  day: "{n}д"
+  hour: "{n}ч"
+  minute: "{n}м"
+  second: "{n}с"
+
+usage:
+  create: "&cИспользование: &f/clan create <название> <тег>"
+  invite: "&cИспользование: &f/clan invite <игрок>"
+  setrole: "&cИспользование: &f/clan setrole <игрок> <роль>"
+  kick: "&cИспользование: &f/clan kick <игрок>"
+  promote: "&cИспользование: &f/clan promote <игрок>"
+  demote: "&cИспользование: &f/clan demote <игрок>"
+  transfer: "&cИспользование: &f/clan transfer <игрок>"
+  deposit: "&cИспользование: &f/clan deposit <money|points> <сумма>"
+  withdraw: "&cИспользование: &f/clan withdraw <money|points> <сумма>"
+  delhome: "&cИспользование: &f/clan delhome <название>"
+  glow: "&cИспользование: &f/clan glow <off|glow|name> &7или &f/clan glow color <цвет>"
+  role: "&cИспользование: &f/clan role <list|create <название>|delete <id>|perm <id> <право>>"
+
+help:
+  - "&#00ACFF⌈&f MirageClans — команды &#00ACFF⌋"
+  - "&#00ACFF‹&f /clan &7— главное меню"
+  - "&#00ACFF‹&f /clan create <название> <тег> &7— создать клан"
+  - "&#00ACFF‹&f /clan invite|accept|deny|leave|kick <игрок>"
+  - "&#00ACFF‹&f /clan promote|demote|setrole|transfer <игрок>"
+  - "&#00ACFF‹&f /clan info [клан] | members | top [level|points|balance]"
+  - "&#00ACFF‹&f /clan deposit|withdraw <money|points> <сумма> | balance | history"
+  - "&#00ACFF‹&f /clan sethome|home|delhome|homes [название]"
+  - "&#00ACFF‹&f /clan storage | quests | level | upgrade"
+  - "&#00ACFF‹&f /clan ff [on|off] | glow <режим> | role <...>"
+  - "&#00ACFF‹&f /cc <сообщение> &7— клановый чат, &f/cc &7— переключатель"

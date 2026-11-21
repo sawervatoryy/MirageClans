@@ -1,0 +1,131 @@
+# ═══════════════════════════════════════════════════════════════
+#  MirageClans v0.1 — config.yml
+#  Тексты — в lang.yml, меню — в menus.yml, квесты — в quests.yml
+#  Цвета: &f — основной, &#00ACFF — выделительный
+# ═══════════════════════════════════════════════════════════════
+
+# Графические меню. false — меню отключены, все команды работают как обычно.
+use-gui: true
+
+database:
+  type: SQLITE            # SQLITE | MYSQL | MARIADB
+  sqlite-file: "clans.db"
+  host: "localhost"
+  port: 3306
+  name: "mirageclans"
+  user: "root"
+  password: ""
+  use-ssl: false
+  pool-size: 6
+  history-keep-days: 30   # сколько дней хранить историю казны (0 — вечно)
+
+clan:
+  name:
+    min-length: 3
+    max-length: 16
+    regex: "^[A-Za-zА-Яа-яЁё0-9_]+$"
+  tag:
+    min-length: 2
+    max-length: 5
+    regex: "^[A-Za-zА-Яа-яЁё0-9]+$"
+  create-cost:            # списывается с игрока при создании клана
+    money: 0
+    points: 0
+  invite-expire-seconds: 60
+  default-friendly-fire: false
+  default-glow-color: AQUA
+  max-custom-roles: 5
+  top-size: 10
+
+# Роли для новых кланов. LEADER — встроенная роль (все права).
+roles:
+  default-role: NEWBIE    # роль, которую получает вступивший игрок
+  templates:
+    DEPUTY:
+      name: "&#00ACFFЗаместитель"
+      weight: 80
+      permissions: [TREASURY_DEPOSIT, TREASURY_WITHDRAW, STORAGE, HOME_TELEPORT, HOME_MANAGE, KICK, INVITE, PVP_MANAGE, MANAGE_ROLES, UPGRADE, SETTINGS]
+    MEMBER:
+      name: "&fУчастник"
+      weight: 50
+      permissions: [TREASURY_DEPOSIT, STORAGE, HOME_TELEPORT]
+    NEWBIE:
+      name: "&7Новичок"
+      weight: 10
+      permissions: [TREASURY_DEPOSIT, HOME_TELEPORT]
+
+# Прокачка. mode: AUTO — уровень растёт сам, когда набран опыт;
+# MANUAL — нужно нажать «Улучшить» (потратит опыт и upgrade-cost из казны).
+leveling:
+  mode: AUTO
+  levels:
+    1:  { xp-required: 500,   upgrade-cost: 0,      max-members: 5,  storage-slots: 9,  max-homes: 1 }
+    2:  { xp-required: 1200,  upgrade-cost: 5000,   max-members: 8,  storage-slots: 18, max-homes: 1 }
+    3:  { xp-required: 2500,  upgrade-cost: 15000,  max-members: 12, storage-slots: 27, max-homes: 2 }
+    4:  { xp-required: 5000,  upgrade-cost: 40000,  max-members: 16, storage-slots: 36, max-homes: 2 }
+    5:  { xp-required: 9000,  upgrade-cost: 90000,  max-members: 20, storage-slots: 45, max-homes: 3 }
+    6:  { xp-required: 15000, upgrade-cost: 180000, max-members: 25, storage-slots: 54, max-homes: 3 }
+    7:  { xp-required: 0,     upgrade-cost: 0,      max-members: 30, storage-slots: 54, max-homes: 5 }
+
+treasury:
+  money-enabled: true     # Vault
+  points-enabled: true    # PlayerPoints
+  max-amount: 1000000000
+  history-size: 45
+  quick-amounts:
+    money: [100, 1000, 10000]
+    points: [10, 100, 1000]
+
+storage:
+  autosave-seconds: 30
+
+homes:
+  teleport-delay-seconds: 3
+  cancel-on-move: true
+  name-regex: "^[A-Za-zА-Яа-яЁё0-9_]{1,16}$"
+  blacklisted-worlds: []
+
+# Дружеский огонь: эффекты зелий, считающиеся вредными (minecraft-ключи)
+friendly-fire:
+  harmful-effects: [instant_damage, poison, wither, slowness, weakness, blindness, nausea, hunger, mining_fatigue, levitation, darkness]
+
+# Подсветка соклановцев
+glow:
+  update-ticks: 10
+  colors: [AQUA, GREEN, RED, YELLOW, LIGHT_PURPLE, GOLD, WHITE, BLUE]
+  # Для режима «цветные ники»: красить ники через scoreboard-команду (видно ВСЕМ игрокам).
+  # Для TAB и персональной раскраски используйте %rel_mirageclans_color%.
+  name-color-team: true
+
+# Клановый чат (/cc). {message} — текст сообщения.
+chat:
+  format: "&#00ACFF«&f{tag}&#00ACFF» {role} &#00ACFF{player}&f: {message}"
+  log-to-console: false
+
+# Анимация открытия главного меню (волна от центра)
+animation:
+  enabled: true
+  ring-delay-ticks: 2
+  sound: "block.amethyst_block.chime"
+
+click-sound: "ui.button.click"
+
+# Значения плейсхолдеров PlaceholderAPI для игрока без клана
+placeholders:
+  no-clan:
+    name: "&7Нет клана"
+    tag: ""
+    role: ""
+    leader: ""
+    level: "0"
+    xp: "0"
+    xp_needed: "0"
+    xp_left: "0"
+    xp_percent: "0"
+    balance: "0"
+    points: "0"
+    members_online: "0"
+    members_total: "0"
+    members_max: "0"
+    friendly_fire: ""
+    homes: "0"

@@ -1,0 +1,387 @@
+# ═══════════════════════════════════════════════════════════════
+#  MirageClans — menus.yml
+#  Плейсхолдеры в name/lore: {clan} {tag} {level} {xp} {xp_needed} {xp_bar} {members} {max_members}
+#  {online} {leader} {balance} {points} {role} {ff} {homes} {max_homes} {storage_slots}
+#  Строка с \n внутри значения плейсхолдера разбивается на несколько строк лора.
+#  Основной цвет &f, выделительный &#00ACFF. Скобки: « » ‹ › ⌈ ⌋
+# ═══════════════════════════════════════════════════════════════
+
+# Фон всех меню (material: AIR — отключить; можно переопределить в menus.<меню>.filler)
+filler:
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+
+common: {}
+
+# Названия прав в матрице ролей
+permissions:
+  TREASURY_DEPOSIT:  { icon: GOLD_NUGGET,        name: "&fПополнение казны" }
+  TREASURY_WITHDRAW: { icon: GOLD_INGOT,         name: "&fСнятие из казны" }
+  STORAGE:           { icon: CHEST,              name: "&fОбщий склад" }
+  HOME_TELEPORT:     { icon: ENDER_PEARL,        name: "&fТелепорт на дом" }
+  HOME_MANAGE:       { icon: RED_BED,            name: "&fУправление домами" }
+  KICK:              { icon: IRON_BOOTS,         name: "&fИсключение игроков" }
+  INVITE:            { icon: WRITABLE_BOOK,      name: "&fПриглашения" }
+  PVP_MANAGE:        { icon: IRON_SWORD,         name: "&fУправление PvP" }
+  MANAGE_ROLES:      { icon: NAME_TAG,           name: "&fУправление ролями" }
+  UPGRADE:           { icon: EXPERIENCE_BOTTLE,  name: "&fПовышение уровня" }
+  SETTINGS:          { icon: COMPARATOR,         name: "&fНастройки клана" }
+
+menus:
+
+  main:
+    title: "&#00ACFF«&fКлан&#00ACFF» &f{clan}"
+    rows: 5
+    items:
+      info:
+        slot: 13
+        material: WHITE_BANNER
+        name: "&#00ACFF«&f{clan}&#00ACFF» &7[{tag}]"
+        lore:
+          - ""
+          - "&#00ACFF‹&f Лидер: &#00ACFF{leader}"
+          - "&#00ACFF‹&f Ваша роль: &f{role}"
+          - "&#00ACFF‹&f Уровень: &#00ACFF{level}"
+          - "&#00ACFF‹&f Опыт: &f{xp}&7/&f{xp_needed}"
+          - "&#00ACFF‹&f Участники: &f{online}&7 онлайн / &f{members}&7/&f{max_members}"
+          - "&#00ACFF‹&f Казна: &#00ACFF{balance} &7| &f{points} очк."
+      members:
+        slot: 20
+        material: PLAYER_HEAD
+        name: "&#00ACFF⌈&f Участники &#00ACFF⌋"
+        lore: ["", "&f Состав клана, роли и управление.", "", "&#00ACFF› &fНажмите, чтобы открыть"]
+      treasury:
+        slot: 21
+        material: GOLD_INGOT
+        name: "&#00ACFF⌈&f Казна &#00ACFF⌋"
+        lore: ["", "&f Баланс: &#00ACFF{balance}", "&f Очки: &#00ACFF{points}", "", "&#00ACFF› &fНажмите, чтобы открыть"]
+      storage:
+        slot: 22
+        material: CHEST
+        name: "&#00ACFF⌈&f Общий склад &#00ACFF⌋"
+        lore: ["", "&f Доступно слотов: &#00ACFF{storage_slots}&7/54", "", "&#00ACFF› &fНажмите, чтобы открыть"]
+      homes:
+        slot: 23
+        material: RED_BED
+        name: "&#00ACFF⌈&f Дома клана &#00ACFF⌋"
+        lore: ["", "&f Точек: &#00ACFF{homes}&7/&f{max_homes}", "", "&#00ACFF› &fНажмите, чтобы открыть"]
+      quests:
+        slot: 24
+        material: WRITABLE_BOOK
+        name: "&#00ACFF⌈&f Квесты клана &#00ACFF⌋"
+        lore: ["", "&f Выполняйте задания вместе", "&f и получайте опыт клана.", "", "&#00ACFF› &fНажмите, чтобы открыть"]
+      levels:
+        slot: 29
+        material: EXPERIENCE_BOTTLE
+        name: "&#00ACFF⌈&f Уровень и улучшения &#00ACFF⌋"
+        lore: ["", "&f Уровень: &#00ACFF{level}", "&f {xp_bar}", "&f Опыт: &#00ACFF{xp}&7/&f{xp_needed}", "", "&#00ACFF› &fНажмите, чтобы открыть"]
+      top:
+        slot: 30
+        material: NETHER_STAR
+        name: "&#00ACFF⌈&f Топ кланов &#00ACFF⌋"
+        lore: ["", "&f По уровню, очкам и балансу.", "", "&#00ACFF› &fНажмите, чтобы открыть"]
+      roles:
+        slot: 31
+        material: NAME_TAG
+        name: "&#00ACFF⌈&f Роли и права &#00ACFF⌋"
+        lore: ["", "&f Матрица прав для каждой роли.", "", "&#00ACFF› &fНажмите, чтобы открыть"]
+      settings:
+        slot: 32
+        material: COMPARATOR
+        name: "&#00ACFF⌈&f Настройки клана &#00ACFF⌋"
+        lore: ["", "&f PvP между соклановцами: {ff}", "&f Подсветка соклановцев.", "", "&#00ACFF› &fНажмите, чтобы открыть"]
+      leave:
+        slot: 33
+        material: IRON_DOOR
+        name: "&c⌈ Покинуть клан ⌋"
+        lore: ["", "&#00ACFF› &fНажмите для выхода"]
+      disband:
+        slot: 33
+        material: TNT
+        name: "&c⌈ Распустить клан ⌋"
+        lore: ["", "&f Действие необратимо!", "", "&#00ACFF› &fНажмите для подтверждения"]
+      close:
+        slot: 40
+        material: BARRIER
+        name: "&c‹ Закрыть ›"
+      # --- вариант для игрока без клана ---
+      create:
+        slot: 20
+        material: EMERALD
+        name: "&#00ACFF⌈&f Создать клан &#00ACFF⌋"
+        lore: ["", "&f Вы будете лидером нового клана.", "&f Название и тег вводятся в чат.", "", "&#00ACFF› &fНажмите, чтобы создать"]
+      invites:
+        slot: 22
+        material: PAPER
+        name: "&#00ACFF⌈&f Приглашения &#00ACFF⌋"
+        lore: ["", "&f Входящих приглашений: &#00ACFF{count}", "", "&#00ACFF› &fНажмите, чтобы открыть"]
+      nc-top:
+        slot: 24
+        material: NETHER_STAR
+        name: "&#00ACFF⌈&f Топ кланов &#00ACFF⌋"
+        lore: ["", "&#00ACFF› &fНажмите, чтобы открыть"]
+
+  members:
+    title: "&#00ACFF«&fУчастники&#00ACFF»"
+    rows: 6
+    items:
+      member:
+        material: PLAYER_HEAD
+        name: "&#00ACFF{player}"
+        lore:
+          - ""
+          - "&#00ACFF‹&f Роль: &f{role}"
+          - "&#00ACFF‹&f Статус: {status}"
+          - ""
+          - "&#00ACFF› &fЛКМ &7— повысить"
+          - "&#00ACFF› &fПКМ &7— понизить"
+          - "&#00ACFF› &fShift+ЛКМ &7— исключить"
+          - "&#00ACFF› &fShift+ПКМ &7— передать лидерство"
+      prev: { slot: 45, material: ARROW, name: "&f‹ Назад ›" }
+      invite:
+        slot: 49
+        material: WRITABLE_BOOK
+        name: "&#00ACFF⌈&f Пригласить игрока &#00ACFF⌋"
+        lore: ["", "&#00ACFF› &fНажмите и введите ник в чат"]
+      back: { slot: 48, material: BARRIER, name: "&c‹ В меню ›" }
+      next: { slot: 53, material: ARROW, name: "&f‹ Вперёд ›" }
+
+  roles:
+    title: "&#00ACFF«&fРоли клана&#00ACFF»"
+    rows: 4
+    role-slots: [10, 11, 12, 13, 14, 15, 16]
+    items:
+      role:
+        material: NAME_TAG
+        name: "{role}"
+        lore:
+          - ""
+          - "&#00ACFF‹&f Приоритет: &f{weight}"
+          - "&#00ACFF‹&f Участников: &f{members}"
+          - "&#00ACFF‹&f Прав выдано: &f{perms}"
+          - ""
+          - "&#00ACFF› &fНажмите, чтобы изменить права"
+      create:
+        slot: 30
+        material: EMERALD
+        name: "&#00ACFF⌈&f Создать роль &#00ACFF⌋"
+        lore: ["", "&#00ACFF› &fНажмите и введите название в чат"]
+      back: { slot: 32, material: BARRIER, name: "&c‹ В меню ›" }
+
+  role-editor:
+    title: "&#00ACFF«&fПрава&#00ACFF» &f{role}"
+    rows: 5
+    perm-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22]
+    items:
+      info:
+        slot: 4
+        material: NAME_TAG
+        name: "{role}"
+        lore: ["", "&#00ACFF‹&f Приоритет: &f{weight}"]
+      weight:
+        slot: 29
+        material: ANVIL
+        name: "&#00ACFF⌈&f Приоритет роли &#00ACFF⌋"
+        lore: ["", "&f Сейчас: &#00ACFF{weight}", "", "&#00ACFF› &fЛКМ &7— +5", "&#00ACFF› &fПКМ &7— −5"]
+      rename:
+        slot: 31
+        material: OAK_SIGN
+        name: "&#00ACFF⌈&f Переименовать &#00ACFF⌋"
+        lore: ["", "&#00ACFF› &fНажмите и введите название в чат"]
+      delete:
+        slot: 33
+        material: TNT
+        name: "&c⌈ Удалить роль ⌋"
+        lore: ["", "&f Участники получат роль по умолчанию."]
+      back: { slot: 40, material: BARRIER, name: "&c‹ К ролям ›" }
+
+  treasury:
+    title: "&#00ACFF«&fКазна клана&#00ACFF»"
+    rows: 5
+    money-slots: [11, 12, 13]
+    points-slots: [20, 21, 22]
+    items:
+      money-info:
+        slot: 10
+        material: GOLD_BLOCK
+        name: "&#00ACFF⌈&f Деньги &#00ACFF⌋"
+        lore: ["", "&f Баланс: &#00ACFF{balance}"]
+      money-amount:
+        material: GOLD_NUGGET
+        name: "&#00ACFF{amount} &fмонет"
+        lore: ["", "&#00ACFF› &fЛКМ &7— внести", "&#00ACFF› &fПКМ &7— снять"]
+      money-custom:
+        slot: 14
+        material: OAK_SIGN
+        name: "&#00ACFF⌈&f Своя сумма &#00ACFF⌋"
+        lore: ["", "&#00ACFF› &fЛКМ &7— внести", "&#00ACFF› &fПКМ &7— снять", "&7 (сумма вводится в чат)"]
+      points-info:
+        slot: 19
+        material: DIAMOND_BLOCK
+        name: "&#00ACFF⌈&f Донат-очки &#00ACFF⌋"
+        lore: ["", "&f Баланс: &#00ACFF{balance}"]
+      points-amount:
+        material: DIAMOND
+        name: "&#00ACFF{amount} &fочков"
+        lore: ["", "&#00ACFF› &fЛКМ &7— внести", "&#00ACFF› &fПКМ &7— снять"]
+      points-custom:
+        slot: 23
+        material: OAK_SIGN
+        name: "&#00ACFF⌈&f Своя сумма &#00ACFF⌋"
+        lore: ["", "&#00ACFF› &fЛКМ &7— внести", "&#00ACFF› &fПКМ &7— снять", "&7 (сумма вводится в чат)"]
+      history:
+        slot: 31
+        material: BOOK
+        name: "&#00ACFF⌈&f История операций &#00ACFF⌋"
+        lore: ["", "&f Кто, сколько и когда.", "", "&#00ACFF› &fНажмите, чтобы открыть"]
+      back: { slot: 40, material: BARRIER, name: "&c‹ В меню ›" }
+
+  history:
+    title: "&#00ACFF«&fИстория казны&#00ACFF»"
+    rows: 6
+    items:
+      entry:
+        material: PAPER
+        name: "&#00ACFF{player}"
+        lore: ["", "&f {action}: &#00ACFF{amount} &f{currency}", "&7 {time}"]
+      loading: { slot: 22, material: CLOCK, name: "&f Загрузка…" }
+      empty: { slot: 22, material: BARRIER, name: "&7 История пуста" }
+      back: { slot: 49, material: BARRIER, name: "&c‹ Назад ›" }
+
+  homes:
+    title: "&#00ACFF«&fДома клана&#00ACFF»"
+    rows: 5
+    home-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25]
+    items:
+      home:
+        material: RED_BED
+        name: "&#00ACFF{home}"
+        lore: ["", "&#00ACFF‹&f Мир: &f{world}", "&#00ACFF‹&f Координаты: &f{x} {y} {z}", "", "&#00ACFF› &fЛКМ &7— телепорт", "&#00ACFF› &fShift+ПКМ &7— удалить"]
+      set:
+        slot: 31
+        material: EMERALD
+        name: "&#00ACFF⌈&f Установить дом здесь &#00ACFF⌋"
+        lore: ["", "&f Точек: &#00ACFF{count}&7/&f{max}", "", "&#00ACFF› &fНажмите и введите название в чат"]
+      back: { slot: 40, material: BARRIER, name: "&c‹ В меню ›" }
+
+  quests:
+    title: "&#00ACFF«&fКвесты клана&#00ACFF»"
+    rows: 5
+    quest-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25]
+    items:
+      tab-daily:
+        slot: 2
+        material: CLOCK
+        name: "&#00ACFF⌈&f Ежедневные &#00ACFF⌋ {state}"
+      tab-weekly:
+        slot: 6
+        material: CLOCK
+        name: "&#00ACFF⌈&f Еженедельные &#00ACFF⌋ {state}"
+      reset:
+        slot: 4
+        material: HOPPER
+        name: "&f Обновление через: &#00ACFF{reset}"
+      back: { slot: 40, material: BARRIER, name: "&c‹ В меню ›" }
+
+  levels:
+    title: "&#00ACFF«&fУровень клана&#00ACFF»"
+    rows: 3
+    items:
+      current:
+        slot: 11
+        material: EXPERIENCE_BOTTLE
+        name: "&#00ACFF⌈&f Уровень {level} &#00ACFF⌋"
+        lore:
+          - ""
+          - "&f {xp_bar}"
+          - "&#00ACFF‹&f Опыт: &f{xp}&7/&f{xp_needed}"
+          - "&#00ACFF‹&f Участников: &f{max_members}"
+          - "&#00ACFF‹&f Слотов склада: &f{storage_slots}"
+          - "&#00ACFF‹&f Домов: &f{max_homes}"
+      next:
+        slot: 13
+        material: SPYGLASS
+        name: "&#00ACFF⌈&f Уровень {next_level} &#00ACFF⌋"
+        lore:
+          - ""
+          - "&#00ACFF‹&f Участников: &f{next_members}"
+          - "&#00ACFF‹&f Слотов склада: &f{next_storage}"
+          - "&#00ACFF‹&f Домов: &f{next_homes}"
+          - "&#00ACFF‹&f Новые квесты по уровню"
+      max:
+        slot: 13
+        material: NETHER_STAR
+        name: "&#00ACFF⌈&f Максимальный уровень &#00ACFF⌋"
+      upgrade:
+        slot: 15
+        material: ANVIL
+        name: "&#00ACFF⌈&f Улучшить клан &#00ACFF⌋"
+        lore: ["", "&f Нужно опыта: &#00ACFF{xp_needed}", "&f Стоимость из казны: &#00ACFF{cost}", "", "&#00ACFF› &fНажмите, чтобы улучшить"]
+      upgrade-auto:
+        slot: 15
+        material: CLOCK
+        name: "&#00ACFF⌈&f Автоповышение &#00ACFF⌋"
+        lore: ["", "&f Уровень растёт сам,", "&f когда набран опыт.", "&f Опыт даёт выполнение квестов."]
+      back: { slot: 22, material: BARRIER, name: "&c‹ В меню ›" }
+
+  top:
+    title: "&#00ACFF«&fТоп кланов&#00ACFF»"
+    rows: 5
+    top-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25]
+    items:
+      tab-level: { slot: 2, material: EXPERIENCE_BOTTLE, name: "&#00ACFF⌈&f По уровню &#00ACFF⌋ {state}" }
+      tab-points: { slot: 4, material: NETHER_STAR, name: "&#00ACFF⌈&f По очкам &#00ACFF⌋ {state}" }
+      tab-balance: { slot: 6, material: GOLD_INGOT, name: "&#00ACFF⌈&f По балансу &#00ACFF⌋ {state}" }
+      entry:
+        material: WHITE_BANNER
+        name: "&#00ACFF#{rank} &f{clan} &7[{tag}]"
+        lore: ["", "&#00ACFF‹&f Уровень: &f{level}", "&#00ACFF‹&f Очки: &f{points}", "&#00ACFF‹&f Баланс: &f{balance}", "&#00ACFF‹&f Участников: &f{members}"]
+      back: { slot: 40, material: BARRIER, name: "&c‹ В меню ›" }
+
+  settings:
+    title: "&#00ACFF«&fНастройки клана&#00ACFF»"
+    rows: 3
+    items:
+      friendly-fire:
+        slot: 11
+        material: IRON_SWORD
+        name: "&#00ACFF⌈&f Урон по своим &#00ACFF⌋"
+        lore: ["", "&f Сейчас: {state}", "&7 Работает и для стрел, зелий и трезубцев.", "", "&#00ACFF› &fНажмите, чтобы переключить"]
+      glow-mode:
+        slot: 13
+        material: GLOWSTONE_DUST
+        name: "&#00ACFF⌈&f Подсветка соклановцев &#00ACFF⌋"
+        lore: ["", "&f Режим: {mode}", "", "&#00ACFF› &fНажмите, чтобы переключить"]
+      glow-color:
+        slot: 15
+        material: PINK_DYE
+        name: "&#00ACFF⌈&f Цвет подсветки &#00ACFF⌋"
+        lore: ["", "&f Цвет: {color}", "", "&#00ACFF› &fНажмите, чтобы сменить"]
+      back: { slot: 22, material: BARRIER, name: "&c‹ В меню ›" }
+
+  invites:
+    title: "&#00ACFF«&fПриглашения&#00ACFF»"
+    rows: 3
+    invite-slots: [10, 11, 12, 13, 14, 15, 16]
+    items:
+      invite:
+        material: PAPER
+        name: "&#00ACFF{clan} &7[{tag}]"
+        lore: ["", "&#00ACFF‹&f Пригласил: &f{inviter}", "&#00ACFF‹&f Участников: &f{members}", "&#00ACFF‹&f Истекает через: &f{expires}", "", "&#00ACFF› &fЛКМ &7— принять", "&#00ACFF› &fПКМ &7— отклонить"]
+      back: { slot: 22, material: BARRIER, name: "&c‹ В меню ›" }
+
+  confirm:
+    title: "&#00ACFF«&fПодтверждение&#00ACFF»"
+    rows: 3
+    items:
+      info: { slot: 13, material: PAPER, name: "{text}" }
+      confirm: { slot: 11, material: LIME_CONCRETE, name: "&a⌈ Подтвердить ⌋" }
+      cancel: { slot: 15, material: RED_CONCRETE, name: "&c⌈ Отмена ⌋" }
+
+  storage:
+    title: "&#00ACFF«&fСклад клана&#00ACFF» &f{clan}"
+    items:
+      locked:
+        material: RED_STAINED_GLASS_PANE
+        name: "&c⌈ Слот заблокирован ⌋"
+        lore: ["", "&f Откроется с повышением", "&f уровня клана."]

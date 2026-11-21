@@ -1,0 +1,32 @@
+name: MirageClans
+version: '${project.version}'
+main: org.github.sawervatoryy.mirageClans.MirageClans
+api-version: '1.21.4'
+load: POSTWORLD
+authors: [sawervatoryy]
+description: Клановая система с GUI, ролями, казной, складом, квестами и прокачкой
+
+softdepend: [Vault, PlayerPoints, PlaceholderAPI, ProtocolLib]
+
+# Библиотеки скачиваются Paper'ом при старте (в jar НЕ шейдятся)
+libraries:
+  - com.zaxxer:HikariCP:5.1.0
+  - org.xerial:sqlite-jdbc:3.46.1.3
+  - org.mariadb.jdbc:mariadb-java-client:3.4.1
+
+commands:
+  clan:
+    description: Главная команда кланов
+    aliases: [c, clans]
+    usage: /<command> help
+  cc:
+    description: Клановый чат
+    usage: /<command> [сообщение]
+
+permissions:
+  mirageclans.use:
+    description: Использование кланов
+    default: true
+  mirageclans.admin:
+    description: Админ-команды (reload и т.д.)
+    default: op
